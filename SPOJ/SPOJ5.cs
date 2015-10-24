@@ -19,8 +19,7 @@ namespace SPOJ
 
             foreach (string n in l)
             {
-                Console.WriteLine();
-                Console.WriteLine(n);
+               
                 int strlen = n.Length;
                 string A = "", B = "", C = "";
                 if (n.Trim('9') == "")
@@ -38,44 +37,47 @@ namespace SPOJ
                 {
                     A = n.Substring(0, strlen / 2);
                     B = n.Substring(strlen / 2, strlen / 2);
+                    string Ar = Rev(A);
 
-                   
+                    int CmpResult = Compare(Ar, B);
+                    if (CmpResult > 0)
+                    {
+                        Console.WriteLine(A  + Ar);
+                    }
+                    else if (CmpResult <= 0)
+                    {
+                        A = inc(A);
+                        Console.WriteLine(A +Rev(A));
+                        
+                    }
                 }
                 else
                 {
                     A = n.Substring(0, strlen / 2);
                     C = n.Substring(strlen / 2, 1);
                     B = n.Substring((strlen / 2) + 1, strlen / 2);
-                    //int CmpResult = Compare(A, B);
-
                     string Ar = Rev(A);
-                   // if (CmpResult > 0)
-                   // {
-                   //     Console.WriteLine(A + C + Ar);
-                   // }
-                   // else if (CmpResult <= 0)
-                   // {
-                        int RCmpResult = Compare(Ar, B);
 
-                        if (RCmpResult > 0)
-                        {
-                            Console.WriteLine(A + C + Ar);
-                        }
-                        else if (RCmpResult <= 0)
-                        {
-                            if (C == "9")
-                            {
-                                A = inc(A);
-                                Console.WriteLine(A + 0 + Rev(A));
-                            }
-                            else
-                            {
-                                Console.WriteLine(A + (Convert.ToInt32(C) + 1) + Ar);
-                            }
-                        }
+                    int CmpResult = Compare(Ar, B);
 
-                   // }
-                   
+                    if (CmpResult > 0)
+                    {
+                        Console.WriteLine(A + C + Ar);
+                    }
+                    else if (CmpResult <= 0)
+                    {
+                        if (C == "9")
+                        {
+                            A = inc(A);
+                            Console.WriteLine(A + 0 + Rev(A));
+                        }
+                        else
+                        {
+                            Console.WriteLine(A + (Convert.ToInt32(C) + 1) + Ar);
+                        }
+                    }
+
+
                 }
             }
 
@@ -101,18 +103,18 @@ namespace SPOJ
             return 0;
         }
 
-        private  static string inc(string n)
+        private static string inc(string n)
         {
             char[] cn = n.ToCharArray();
-            int i = cn.Length-1;
+            int i = cn.Length - 1;
             int carry = 1;
-            while (i>=0)
+            while (i >= 0)
             {
                 if (carry == 0)
                     break;
-                int x = Convert.ToInt32(cn[i].ToString())+carry;
+                int x = Convert.ToInt32(cn[i].ToString()) + carry;
                 cn[i] = (x % 10).ToString()[0];
-                carry = carry / 10;
+                carry = x / 10;
                 i--;
             }
             return new String(cn);
