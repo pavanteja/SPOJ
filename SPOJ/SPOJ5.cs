@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+///     The Next Palindrome
+///     Still i can optmize but i have to solve remaining probs.
+/// </summary>
 namespace SPOJ
 {
     class SPOJ5
     {
-        static void Main(string[] args)
+        static void Main5(string[] args)
         {
             int K = Convert.ToInt32(Console.ReadLine());
             string[] l = new string[K];

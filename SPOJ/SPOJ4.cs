@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
-/// Transform the Expression   
+///     Transform the Expression   
 /// </summary>
 namespace SPOJ
 {
