@@ -11,7 +11,7 @@ namespace SPOJ
 {
     class SPOJ10366
     {
-        public static void Main()
+        public static void Main10366()
         {
             int K = Convert.ToInt32(Console.ReadLine());
             string[] l = new string[K];

@@ -46,8 +46,10 @@
     <Compile Include="SPOJ1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SPOJ10366.cs" />
+    <Compile Include="SPOJ11.cs" />
     <Compile Include="SPOJ2.cs" />
     <Compile Include="SPOJ4.cs" />
+    <Compile Include="SPOJ42.cs" />
     <Compile Include="SPOJ5.cs" />
     <Compile Include="SPOJ6.cs" />
   </ItemGroup>
