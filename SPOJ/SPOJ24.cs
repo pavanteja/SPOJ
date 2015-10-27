@@ -10,7 +10,7 @@ namespace SPOJ
 {
     class SPOJ24
     {
-        public static void Main()
+        public static void Main24()
         {
             int[] l = new int[Convert.ToInt32(Console.ReadLine())];
             for (int i = 0; i < l.Length; i++)
