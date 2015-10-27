@@ -1,0 +1,18 @@
+﻿Feynman- c# not in allowed languages.so implimented in c.
+int main()
+{
+	int n;
+	while (1)
+	{
+		
+		scanf_s("%d", &n);
+		if (n == 0)
+		{
+			break;
+		}
+		printf_s("%d\n", n*(n + 1)*(2 * n + 1)/6);
+		
+	}
+	scanf_s("%d", &n);
+	return 0;
+}
