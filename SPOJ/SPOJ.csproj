@@ -54,6 +54,7 @@
     <Compile Include="SPOJ42.cs" />
     <Compile Include="SPOJ5.cs" />
     <Compile Include="SPOJ6.cs" />
+    <Compile Include="SPOJ6471.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
