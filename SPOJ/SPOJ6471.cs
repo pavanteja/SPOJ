@@ -16,30 +16,30 @@ namespace SPOJ
 
             var watch = Stopwatch.StartNew();
 
-            int n = 100000000;
+            int n = 10000000;
             
-            int[] primes = new int[n];
+            //int[] primes = new int[n];
             
             
-            primes[0] = 0 | 1;
-            primes[1] = 0 | 1;
+            //primes[0] = 0 | 1;
+            //primes[1] = 0 | 1;
             
-            int root = (int)Math.Sqrt(n);
-            for (int i = 2; i < root; i++)
-            {
-                if ((primes[i] ) == 0)
-                {
-                    for (int j = i * i, k = 2; j < n;  j = i * ++k)
-                    {
-                        primes[j] =1;
-                    }
-                }
-            }
+            //int root = (int)Math.Sqrt(n);
+            //for (int i = 2; i < root; i++)
+            //{
+            //    if ((primes[i] ) == 0)
+            //    {
+            //        for (int j = i * i, k = 2; j <= n-1;  j = i * ++k)
+            //        {
+            //            primes[j] =1;
+            //        }
+            //    }
+            //}
 
-            int c = 1; long sum1 = 0;
+            int c = 1; int sum1 = 0;
             for (int i = 1; i < n; i = i + 2)
             {
-                if ((primes[i]) == 0)
+                if (is_prime(i))
                 {
                     if (c % 100 == 1)
                     {
@@ -63,6 +63,25 @@ namespace SPOJ
 
 
             Console.ReadLine();
+        }
+        public static bool is_prime(int n)
+        {
+            if (n <= 3)
+                return true;
+            else if (n % 2 == 0 || n % 3 == 0)
+                return false;
+            int i = 5;
+            while (i * i <= n)
+            {
+                if (n % i == 0 || n % (i + 2) == 0)
+                {
+                    return false;
+                }
+                i = i + 6;
+
+            }
+            return true;
+
         }
 
     }
