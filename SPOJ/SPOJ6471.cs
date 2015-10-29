@@ -13,40 +13,55 @@ namespace SPOJ
     {
         public static void Main()
         {
-            
+
             var watch = Stopwatch.StartNew();
+
             int n = 100000000;
-            bool[] numbers = new bool[n];
-            numbers[0] = true;
-            numbers[1] = true;
-            for (int i = 2; i <Math.Sqrt(n); i++)
+            
+            int[] primes = new int[n];
+            
+            
+            primes[0] = 0 | 1;
+            primes[1] = 0 | 1;
+            
+            int root = (int)Math.Sqrt(n);
+            for (int i = 2; i < root; i++)
             {
-                for (int j = i*i; j < n; j++)
+                if ((primes[i] ) == 0)
                 {
-                    if (j%i==0)
+                    for (int j = i * i, k = 2; j < n;  j = i * ++k)
                     {
-                        numbers[j] = true;
+                        primes[j] =1;
                     }
                 }
-
             }
-            int c = 1;
-            for (int i = 0; i < n; i++)
+
+            int c = 1; long sum1 = 0;
+            for (int i = 1; i < n; i = i + 2)
             {
-                if (!numbers[i])
+                if ((primes[i]) == 0)
                 {
-                    if(c%100==1)
+                    if (c % 100 == 1)
                     {
-                        Console.WriteLine(i);
+                        sum1 += i;//.Append(i+"\n");
+
                     }
+
                     c++;
                 }
 
             }
-
+            //Console.WriteLine(sum);
             watch.Stop();
-            Console.WriteLine("---------");
-            Console.WriteLine(watch.ElapsedMilliseconds);
+           
+
+            Console.WriteLine(c - 1 + " Primes");
+            Console.WriteLine("--------------");
+
+            var elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+            Console.WriteLine(elapsedMs);
+
+
             Console.ReadLine();
         }
 
