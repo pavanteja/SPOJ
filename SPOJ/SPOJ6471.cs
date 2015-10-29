@@ -35,15 +35,15 @@ namespace SPOJ
                     }
                 }
             }
-
-            int c = 1; long sum1 = 0;
-            for (int i = 1; i < n; i = i + 2)
+            watch.Stop();
+            int c = 1; long sum1 = 0;StringBuilder s = new StringBuilder();
+            for (int i = 0; i < n; i = i + 1)
             {
                 if ((primes[i]) == 0)
                 {
                     if (c % 100 == 1)
                     {
-                        sum1 += i;//.Append(i+"\n");
+                        s.AppendLine(i+"");
 
                     }
 
@@ -51,11 +51,12 @@ namespace SPOJ
                 }
 
             }
+            Console.WriteLine(s);
             //Console.WriteLine(sum);
-            watch.Stop();
+            
            
 
-            Console.WriteLine(c - 1 + " Primes");
+            Console.WriteLine(c  + " Primes");
             Console.WriteLine("--------------");
 
             var elapsedMs = watch.ElapsedMilliseconds / 1000.0;
