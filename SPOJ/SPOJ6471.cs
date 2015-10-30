@@ -11,7 +11,7 @@ namespace SPOJ
 {
     class SPOJ6471
     {
-        public static void Main()
+        public static void Main6471()
         {
 
             var watch = Stopwatch.StartNew();
