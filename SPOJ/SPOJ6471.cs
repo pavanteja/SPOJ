@@ -16,7 +16,7 @@ namespace SPOJ
 
             var watch = Stopwatch.StartNew();
 
-            const int n = 99999989;
+            const int n = 100000000;//99999989;
             int i = 0, j = 0;
             bool[] primes = new bool[n];
             primes[0] =  true;
@@ -33,15 +33,15 @@ namespace SPOJ
                     }
                 }
             }
-            watch.Stop();
-            int c = 1; StringBuilder s = new StringBuilder();
-            for (i = 3; i < n; i = i + 2)
+            
+            int c = 2; StringBuilder s = new StringBuilder();
+            for (i = 1; i < n; i = i + 2)
             {
-                if (!primes[i])
+                if (!primes[i] )
                 {
                     if (c % 100 == 1)
                     {
-                         //s.AppendLine(i+"");
+                         s.AppendLine(i+"");
 
                     }
 
@@ -49,12 +49,13 @@ namespace SPOJ
                 }
 
             }
-            Console.WriteLine(s);
+            Console.WriteLine(2);
+            Console.Write(s);
             //Console.WriteLine(sum);
 
+            watch.Stop();
 
-
-            Console.WriteLine(c + " Primes");
+            Console.WriteLine(c-1 + " Primes");
             Console.WriteLine("--------------");
 
             var elapsedMs = watch.ElapsedMilliseconds / 1000.0;
