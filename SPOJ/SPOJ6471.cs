@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,34 +16,32 @@ namespace SPOJ
 
             var watch = Stopwatch.StartNew();
 
-            int n = 100000000;
-            
-            int[] primes = new int[n];
-            
-            
-            primes[0] = 0 | 1;
-            primes[1] = 0 | 1;
+            const int n = 99999989;
+            int i = 0, j = 0;
+            bool[] primes = new bool[n];
+            primes[0] =  true;
+            primes[1] = true;
             
             int root = (int)Math.Sqrt(n);
-            for (int i = 2; i < root; i++)
+            for (i = 3; i < root; i=i+2)
             {
-                if ((primes[i] ) == 0)
+                if (!primes[i])
                 {
-                    for (int j = i * i, k = 2; j < n;  j = i * ++k)
+                    for (j = i * i; j < n; j +=i)
                     {
-                        primes[j] =1;
+                        primes[j] = true;
                     }
                 }
             }
             watch.Stop();
-            int c = 1; long sum1 = 0;StringBuilder s = new StringBuilder();
-            for (int i = 0; i < n; i = i + 1)
+            int c = 1; StringBuilder s = new StringBuilder();
+            for (i = 3; i < n; i = i + 2)
             {
-                if ((primes[i]) == 0)
+                if (!primes[i])
                 {
                     if (c % 100 == 1)
                     {
-                        s.AppendLine(i+"");
+                         //s.AppendLine(i+"");
 
                     }
 
@@ -53,10 +51,10 @@ namespace SPOJ
             }
             Console.WriteLine(s);
             //Console.WriteLine(sum);
-            
-           
 
-            Console.WriteLine(c  + " Primes");
+
+
+            Console.WriteLine(c + " Primes");
             Console.WriteLine("--------------");
 
             var elapsedMs = watch.ElapsedMilliseconds / 1000.0;
