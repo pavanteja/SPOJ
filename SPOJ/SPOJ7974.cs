@@ -10,7 +10,7 @@ namespace SPOJ
 {
     class SPOJ7974
     {
-        public static void Main()
+        public static void Main7974()
         {
 
 

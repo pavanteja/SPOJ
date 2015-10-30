@@ -12,14 +12,18 @@ namespace SPOJ
     {
         public static void Main4300()
         {
-            int i = Convert.ToInt32(Console.ReadLine());
-            for (int n = 1; n <= i; n++)
+            int n = Convert.ToInt32(Console.ReadLine());
+            int c = 0;
+            int sn = (int)Math.Sqrt(n);
+            for (int i = 1; i <= sn; i++)
             {
-                Console.WriteLine(n + " - " + (n + (int)Math.Sqrt(n) - 1 + (n - 2) / 2));
+                for (int j = i + 1; i * j <= n; j++)
+                {
+                    c++;
+                }
             }
 
-
-            Console.ReadLine();
+            Console.WriteLine(c + sn);
 
         }
     }
