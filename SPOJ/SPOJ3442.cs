@@ -9,7 +9,7 @@ namespace SPOJ
 {
     class SPOJ3442
     {
-        public static void Main()
+        public static void Main3442()
         {
 
 
