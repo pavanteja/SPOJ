@@ -51,6 +51,7 @@
     <Compile Include="SPOJ11.cs" />
     <Compile Include="SPOJ1112.cs" />
     <Compile Include="SPOJ2.cs" />
+    <Compile Include="SPOJ2123.cs" />
     <Compile Include="SPOJ24.cs" />
     <Compile Include="SPOJ3442.cs" />
     <Compile Include="SPOJ4.cs" />

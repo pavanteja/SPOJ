@@ -10,7 +10,7 @@ namespace SPOJ
 {
     class SPOJ400
     {
-        public static void Main()
+        public static void Main400()
         {
             int columns = Convert.ToInt32(Console.ReadLine());
 
