@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LearnPrime.cs" />
+    <Compile Include="PrimeSieveBitVector.cs" />
     <Compile Include="SPOJ1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SPOJ1025.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="SPOJ4300.cs" />
     <Compile Include="SPOJ5.cs" />
     <Compile Include="SPOJ6.cs" />
+    <Compile Include="SPOJ6470.cs" />
     <Compile Include="SPOJ6471.cs" />
     <Compile Include="SPOJ7974.cs" />
   </ItemGroup>
