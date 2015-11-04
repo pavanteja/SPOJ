@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Text;
 
@@ -6,55 +8,65 @@ namespace SPOJ
 {
     class PrimeSieveBitVector
     {
-        public static void Main6471()
+        public static void MainBv()
         {
 
-            var watch = Stopwatch.StartNew();
+             var watch = Stopwatch.StartNew();
+            const int n = 86028113;//100000000;//99999989;
+            int i = 3, j = 0;
 
-            const int n = 100000000;//99999989;
-            int i = 0, j = 0;
-            bool[] primes = new bool[n];
-            primes[0] = true;
-            primes[1] = true;
+            //masks[0] = BitVector32.CreateMask();
+            //for (i = 1; i < n; i++)
+            //{
+            //    masks[i] = BitVector32.CreateMask(masks[i - 1]);
+            //}
 
-            int root = (int)Math.Sqrt(n);
-            for (i = 3; i < root; i = i + 2)
+
+
+            bool[] bv = new bool[n];
+            
+            int root = 10000;
+           
+            for (; i < root; i = i + 2)
             {
-                if (!primes[i])
+                if (!bv[i])
                 {
                     for (j = i * i; j < n; j += i)
                     {
-                        primes[j] = true;
+
+                        bv[j] = true;
                     }
                 }
             }
-
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+            Console.WriteLine(elapsedMs);
             int c = 2; StringBuilder s = new StringBuilder();
             for (i = 1; i < n; i = i + 2)
             {
-                if (!primes[i])
+                if (!bv[i])
                 {
-                    if (c % 100 == 1)
-                    {
-                        s.AppendLine(i + "");
-
-                    }
+                    //if (c % 100 == 1)
+                    // {
+                    //s.AppendLine(i + "");
+                    if (c == 5000000)
+                        Console.WriteLine(i);
+                    // }
 
                     c++;
                 }
 
             }
-            Console.WriteLine(2);
-            Console.Write(s);
+            // Console.WriteLine(2);
+            // Console.Write(s);
             //Console.WriteLine(sum);
 
-            watch.Stop();
+
 
             Console.WriteLine(c - 1 + " Primes");
             Console.WriteLine("--------------");
 
-            var elapsedMs = watch.ElapsedMilliseconds / 1000.0;
-            Console.WriteLine(elapsedMs);
+          
 
 
             Console.ReadLine();
